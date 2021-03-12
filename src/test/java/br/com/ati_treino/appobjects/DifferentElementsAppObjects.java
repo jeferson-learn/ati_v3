@@ -70,4 +70,10 @@ public class DifferentElementsAppObjects {
     public WebElement emailAutoCompleteTextField() {
         return driver.findElement(By.id("email"));
     }
+    public Select listBoxSelect() {
+        return new Select(driver.findElement(By.name("list_box_name[]")));
+    }
+    public Select comboBoxSelect() {
+        return new Select(driver.findElement(By.cssSelector("center select:nth-child(87)")));
+    }
 }
