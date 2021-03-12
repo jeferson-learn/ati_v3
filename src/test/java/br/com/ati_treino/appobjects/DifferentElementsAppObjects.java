@@ -51,5 +51,17 @@ public class DifferentElementsAppObjects {
     public WebElement salary7000WebTableTextLabel() {
         return driver.findElement(By.cssSelector(" center table tbody tr:nth-child(3) td:nth-child(2)"));
     }
-
+    public void getInFrames(){
+        WebElement elementFrame = driver.findElement(By.id("iframe01"));
+        driver.switchTo().frame(elementFrame);
+    }
+    public void getOutFrames() {
+        driver.switchTo().defaultContent();
+    }
+    public WebElement searchWikipediaFramesFieldText() {
+        return driver.findElement(By.id("searchInput"));
+    }
+    public WebElement pesquisarWikipediaFramesButton() {
+        return driver.findElement(By.cssSelector("fieldset button"));
+    }
 }
