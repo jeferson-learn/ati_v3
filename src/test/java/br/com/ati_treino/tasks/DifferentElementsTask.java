@@ -64,4 +64,12 @@ public class DifferentElementsTask {
         differentElementsAppObjects.emailAutoCompleteTextField().sendKeys("jeferson@hotmail.com");
         return this;
     }
+    public DifferentElementsTask listBox() {
+        differentElementsAppObjects.listBoxSelect().selectByValue("option2");
+        return this;
+    }
+    public DifferentElementsTask comboBox() {
+        differentElementsAppObjects.comboBoxSelect().selectByValue("java");
+        return this;
+    }
 }
