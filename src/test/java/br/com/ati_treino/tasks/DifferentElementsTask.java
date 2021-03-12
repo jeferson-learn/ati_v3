@@ -53,7 +53,15 @@ public class DifferentElementsTask {
         differentElementsAppObjects.getInFrames();
         differentElementsAppObjects.searchWikipediaFramesFieldText().sendKeys("Teste");
         differentElementsAppObjects.pesquisarWikipediaFramesButton().click();
-//        differentElementsAppObjects.getOutFrames();
+        differentElementsAppObjects.getOutFrames();
+        return this;
+    }
+    public DifferentElementsTask datePicker() {
+        differentElementsAppObjects.datePickerTextField().sendKeys("12/03/2021");
+        return this;
+    }
+    public DifferentElementsTask autoComplete() {
+        differentElementsAppObjects.emailAutoCompleteTextField().sendKeys("jeferson@hotmail.com");
         return this;
     }
 }
