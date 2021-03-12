@@ -22,6 +22,8 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .wikipediaFrames()
                 .datePicker()
                 .autoComplete()
+                .listBox()
+                .comboBox()
         ;
         Thread.sleep(5000);
     }
