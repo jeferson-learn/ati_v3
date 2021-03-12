@@ -2,8 +2,6 @@ package br.com.ati_treino.testcases;
 
 import br.com.ati_treino.frameworks.utlis.BaseTest;
 import br.com.ati_treino.tasks.DifferentElementsTask;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class DifferentElementsOnAWebPageTestCase extends BaseTest {
@@ -15,7 +13,13 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
 
         differentElementsTask
                 .textArea()
-                .textBox();
+                .textBox()
+                .radioCheckBox()
+                .checkbox3CheckBox()
+                .inputTypeButton()
+//        .dropDownSelect()
+        .webTable()
+        ;
         Thread.sleep(5000);
     }
 
