@@ -49,4 +49,11 @@ public class DifferentElementsTask {
         System.out.println("Salario: " + differentElementsAppObjects.salary7000WebTableTextLabel().getText());
         return this;
     }
+    public DifferentElementsTask wikipediaFrames() {
+        differentElementsAppObjects.getInFrames();
+        differentElementsAppObjects.searchWikipediaFramesFieldText().sendKeys("Teste");
+        differentElementsAppObjects.pesquisarWikipediaFramesButton().click();
+//        differentElementsAppObjects.getOutFrames();
+        return this;
+    }
 }
