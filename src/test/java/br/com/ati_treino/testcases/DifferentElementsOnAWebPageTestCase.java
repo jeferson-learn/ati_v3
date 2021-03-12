@@ -19,6 +19,7 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .inputTypeButton()
 //        .dropDownSelect()
         .webTable()
+        .wikipediaFrames()
         ;
         Thread.sleep(5000);
     }
