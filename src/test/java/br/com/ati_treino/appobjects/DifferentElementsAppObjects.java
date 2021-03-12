@@ -64,4 +64,10 @@ public class DifferentElementsAppObjects {
     public WebElement pesquisarWikipediaFramesButton() {
         return driver.findElement(By.cssSelector("fieldset button"));
     }
+    public WebElement datePickerTextField() {
+        return driver.findElement(By.id("start"));
+    }
+    public WebElement emailAutoCompleteTextField() {
+        return driver.findElement(By.id("email"));
+    }
 }
