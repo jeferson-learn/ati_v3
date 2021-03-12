@@ -17,9 +17,11 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .radioCheckBox()
                 .checkbox3CheckBox()
                 .inputTypeButton()
-//        .dropDownSelect()
-        .webTable()
-        .wikipediaFrames()
+        //        .dropDownSelect()
+                .webTable()
+                .wikipediaFrames()
+                .datePicker()
+                .autoComplete()
         ;
         Thread.sleep(5000);
     }
