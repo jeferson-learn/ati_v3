@@ -1,5 +1,6 @@
 package br.com.ati_treino.frameworks.utlis;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Wait {
 
     private WebDriver driver;
-    private WebDriverWait wait;
 
     public Wait(WebDriver driver){
         this.driver = driver;
@@ -23,6 +23,11 @@ public class Wait {
     public WebElement waitElementToBeClickable(By by){
         WebDriverWait wait = new WebDriverWait(driver, 20);
         return wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public Alert waitElementAlert(){
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        return wait.until(ExpectedConditions.alertIsPresent());
     }
 
     public WebElement waitLoadElement(WebElement element) {
