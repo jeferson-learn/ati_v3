@@ -76,4 +76,39 @@ public class DifferentElementsAppObjects {
     public Select comboBoxSelect() {
         return new Select(driver.findElement(By.cssSelector("center select:nth-child(87)")));
     }
+    public WebElement doubleClickButton() {
+        return driver.findElement(By.id("doubleClickBtn"));
+    }
+    public WebElement escolherArquivoButton() {
+//        return driver.findElement(By.id("fileupload1"));
+        return driver.findElement(By.name("fileupload"));
+    }
+    public WebElement simplesAlertButton() {
+        return driver.findElement(By.id("simpleAlert"));
+    }
+    public WebElement confirmationAlertButton() {
+        return driver.findElement(By.id("confirmationAlert"));
+    }
+    public WebElement promptAlertButton() {
+        return driver.findElement(By.id("promptAlert"));
+    }
+    public WebElement clickOpenNewBrowserWindowsButton() {
+        return driver.findElement(By.id("windowhandling1"));
+    }
+    public WebElement pesquisarWikipediaTextField() {
+        return driver.findElement(By.id("searchInput"));
+    }
+    public WebElement clickMeWaitButton() {
+        return driver.findElement(By.id("testWait123"));
+    }
+    public WebElement welcomeToAutomationTestingInsiderTextLabel() {
+        return driver.findElement(By.id("timeout_text"));
+    }
+    public WebElement hiddenFieldTextLabel() {
+        return driver.findElement(By.id("custId"));
+    }
+    public WebElement sameElementThirdCheckBox() {
+        return driver.findElement(By.cssSelector("center input[name=chk]:nth-child(129)"));
+    }
+
 }
