@@ -9,6 +9,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class DifferentElementsTask {
 
     private final WebDriver driver;
@@ -46,10 +50,68 @@ public class DifferentElementsTask {
         driver.switchTo().alert().accept();
         return this;
     }
-    public DifferentElementsTask dropDownSelect() {
+    public DifferentElementsTask imagemExist() {
+        if(differentElementsAppObjects.image().isDisplayed()){
+            System.out.println("A imagem existe");
+        } else {
+            System.out.println("A imagem não existe");
+        }
+        return this;
+    }
+    public DifferentElementsTask dropDownSelect() throws InterruptedException {
+        Set<String> abas;
+        String mainWindow = driver.getWindowHandle();
+        abas = driver.getWindowHandles();
+//        System.out.println("string main: " + mainWindow);
+//        System.out.println("abas main: " + abas.toString());
+
         differentElementsAppObjects.listDropDownSelect().selectByValue("fiat");
         differentElementsAppObjects.enviarDropDownButton().click();
-        driver.close();
+
+//        String primeiraAba = driver.getWindowHandle();
+        abas = driver.getWindowHandles();
+//        System.out.println("string primeira aba: " + primeiraAba);
+//        System.out.println("abas primeira baba: " + abas.toString());
+//        System.out.println("ABA1");
+
+        driver.switchTo().window(mainWindow);
+        differentElementsAppObjects.enviarDropDownButton().click();
+//        String segundaAba = driver.getWindowHandle();
+        abas = driver.getWindowHandles();
+//        System.out.println("string segunda aba: " + segundaAba);
+//        System.out.println("abas segunda aba: " + abas.toString());
+//        System.out.println("ABA2");
+
+        driver.switchTo().window(mainWindow);
+//        System.out.println("atual");
+//        Thread.sleep(5000);
+//        System.out.println("SetArray: " + abas.size());
+
+//        List<String> abass = new ArrayList<>(driver.getWindowHandles());
+//        System.out.println("TESTE");
+//        Thread.sleep(5000);
+//        driver.switchTo().window(abass.get(1));
+//        Thread.sleep(5000);
+//        driver.switchTo().window(abass.get(2));
+//        Thread.sleep(5000);
+//        driver.switchTo().window(abass.get(0));
+//        Thread.sleep(5000);
+//        WebDriver nomeJanela = driver.switchTo().window(abass.get(0));
+//        String nome = nomeJanela.toString();
+//        System.out.println("web + toSring: " + nome);
+//        System.out.println("String: " + mainWindow);
+//        Thread.sleep(5000);
+        for(String windowHandle : abas) {
+//            System.out.println(windowHandle.toString());
+            if( !windowHandle.equals(mainWindow) ) {
+//                System.out.println("ok");
+                driver.switchTo().window(windowHandle);
+//                Thread.sleep(5000);
+                driver.close();
+            }
+        }
+        driver.switchTo().window(mainWindow);
+//        Thread.sleep(5000);
         return this;
     }
     public DifferentElementsTask webTable() {
