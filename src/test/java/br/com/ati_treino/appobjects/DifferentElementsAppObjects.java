@@ -38,6 +38,7 @@ public class DifferentElementsAppObjects {
     public WebElement inputTypeButton() {
         return driver.findElement(By.cssSelector("input[value='Click Me!']"));
     }
+    public WebElement image() { return driver.findElement(By.cssSelector("#post-body-7988417473080013803  center  img")); }
     public Select listDropDownSelect() {
         return new Select(driver.findElement(By.name("cars")));
     }
