@@ -18,7 +18,8 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .radioCheckBox()
                 .checkbox3CheckBox()
                 .inputTypeButton()
-//                .dropDownSelect() /* Fecha aba */
+                .imagemExist()
+                .dropDownSelect() // Fecha aba
                 .webTable()
                 .wikipediaFrames()
                 .datePicker()
@@ -28,7 +29,7 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .doubleClickAndRightClick()
 //                .fileUpload() /* Tenta */
                 .tiposAlerts() /* parte prompt nao funciona preender */
-                .newBrowserWindow()
+                .newBrowserWindow() // abrir outra janela navegador
                 .testSeleniumWaits5Seconds()
                 .hiddenField()
                 .sameElement()
