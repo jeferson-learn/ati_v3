@@ -27,7 +27,7 @@ public class DifferentElementsOnAWebPageTestCase extends BaseTest {
                 .listBox()
                 .comboBox()
                 .doubleClickAndRightClick()
-//                .fileUpload() /* Tenta */
+                .fileUpload()
                 .tiposAlerts() /* parte prompt nao funciona preender */
                 .newBrowserWindow() // abrir outra janela navegador
                 .testSeleniumWaits5Seconds()
