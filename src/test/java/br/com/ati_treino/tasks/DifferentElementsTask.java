@@ -5,6 +5,7 @@ import br.com.ati_treino.frameworks.utlis.Wait;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -154,9 +155,10 @@ public class DifferentElementsTask {
         return this;
     }
     public DifferentElementsTask fileUpload() {
-//        differentElementsAppObjects.escolherArquivoButton().click();
-//        differentElementsAppObjects.escolherArquivoButton().sendKeys("C:\\Users\\Jeferson\\Documents\\geral\\guru99");
-        differentElementsAppObjects.escolherArquivoButton().sendKeys("C:\\Users\\Jeferson\\Desktop\\faculdade\\prova\\debug");
+//        WebElement element = differentElementsAppObjects.escolherArquivoButton();
+//        element.sendKeys("C:\\Users\\Jeferson\\Pictures\\Jeferson\\qualquer\\download.png");
+        /* ou */
+        differentElementsAppObjects.escolherArquivoButton().sendKeys("C:\\Users\\Jeferson\\Pictures\\Jeferson\\qualquer\\download.png");
         return this;
     }
     public DifferentElementsTask tiposAlerts() throws InterruptedException {
@@ -169,30 +171,27 @@ public class DifferentElementsTask {
     /* Nao funciona preender no prompt */
     private void promptAlert() throws InterruptedException {
         differentElementsAppObjects.promptAlertButton().click();
-        Thread.sleep(3000);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        alert.sendKeys("Teste");
-        Thread.sleep(3000);
-        alert.accept();
-//        alert.dismiss();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().sendKeys("TESTE");
+        driver.switchTo().alert().accept();
+//        driver.switchTo().alert().dismiss();
     }
 
     private void confirmationCancelAlert() throws InterruptedException {
         differentElementsAppObjects.confirmationAlertButton().click();
-        Thread.sleep(3000);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        alert.dismiss();
+        wait.until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().dismiss();
     }
 
     private void confirmationOkAlert() throws InterruptedException {
         differentElementsAppObjects.confirmationAlertButton().click();
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
     }
 
     private void simplesAlert() throws InterruptedException {
         differentElementsAppObjects.simplesAlertButton().click();
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
     }
     public DifferentElementsTask newBrowserWindow() throws InterruptedException {
